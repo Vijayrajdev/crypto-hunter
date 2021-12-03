@@ -53,12 +53,8 @@ const Coinstable = () => {
     },
   });
 
-  const handlesearch = () => {
-    return Coins.filter(
-      (coin) =>
-        coin.name.toLowerCase().includes(Search) ||
-        coin.Symbol.toLowerCase().includes(Search)
-    );
+  const handleSearch = () => {
+    return Coins.filter((coin) => coin.name.toLowerCase().includes(Search));
   };
 
   const useStyles = makeStyles(() => ({
@@ -119,7 +115,7 @@ const Coinstable = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {handlesearch()
+                  {handleSearch()
                     .slice((Page - 1) * 10, (Page - 1) * 10 + 10)
                     .map((row) => {
                       const profit = row.price_change_percentage_24h > 0;
@@ -192,7 +188,7 @@ const Coinstable = () => {
           )}
         </TableContainer>
         <Pagination
-          count={(handlesearch()?.length / 10).toFixed(0)}
+          count={(handleSearch()?.length / 10).toFixed(0)}
           style={{
             padding: 20,
             width: "100%",
