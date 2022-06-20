@@ -49,8 +49,7 @@ const Footer = () => {
                 Crypto Analyser
               </Typography>
               <Typography className={classes.paragraph} variant="p">
-                Made by <a href="https://vijayraj.netlify.app/">Vijayraj_</a>
-                ❤️
+                
               </Typography>
             </Toolbar>
           </Container>
